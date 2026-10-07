@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="index.html">MOVIEHUB</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -30,64 +30,69 @@
 
     <main class="container pb-5 pt-5">
         <h2 class="mb-4">Latest Trailers</h2>
-        <div class="row">
+        <div class="row g-4">
             <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Trailer 1">
-                    <div class="card-body">
-                        <h5 class="card-title">Trailer 1</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima harum nihil, consectetur reiciendis quam rem! Molestiae ratione obcaecati impedit quod perferendis eveniet totam tempore. Aut in temporibus voluptatum consequatur et.</p>
-                        <a href="#" class="btn btn-danger">Play Now</a>
+                <div class="card trailer-card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsgXAndLrxHe5wGOIBGs961Km6D9ckI8LJ8lWGlh75pg&s=10" loading="lazy" class="card-img-top" alt="Inception">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Inception</h5>
+                        <p class="card-text flex-grow-1">A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea.</p>
+                        <a href="https://www.youtube.com/watch?v=YoHD9XEInc0" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Trailer 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Trailer 2</h5>
-                        <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas blanditiis ipsa sed? Possimus perferendis eaque sunt, aspernatur, amet quasi, odio libero corrupti obcaecati ratione quos distinctio unde in minima eveniet.</p>
-                        <a href="#" class="btn btn-danger">Play Now</a>
+                <div class="card trailer-card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNcSL6phiLPS-R4HKA7eySvulhYQNbuwy7kG5MHkoWUA&s=10" loading="lazy" class="card-img-top" alt="Interstellar">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Interstellar</h5>
+                        <p class="card-text flex-grow-1">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
+                        <a href="https://www.youtube.com/watch?v=zSWdZVtXT7E" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Trailer 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Trailer 3</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta cupiditate officiis aperiam sed quisquam necessitatibus! Obcaecati doloribus nisi, sequi architecto est deleniti pariatur voluptatibus, illum excepturi ab repellat adipisci modi!</p>
-                        <a href="#" class="btn btn-danger">Play Now</a>
+                <div class="card trailer-card h-100">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg" loading="lazy" class="card-img-top" alt="The Dark Knight">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">The Dark Knight</h5>
+                        <p class="card-text flex-grow-1">When the menace known as the Joker wreaks havoc, Batman must accept one of the greatest tests.</p>
+                        <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Trailer 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Trailer 4</h5>
-                        <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta reprehenderit dolor quibusdam non, quae aspernatur sunt rem magnam dolores saepe, et maiores modi perspiciatis. Ipsum voluptatibus temporibus quod delectus animi?</p>
-                        <a href="#" class="btn btn-danger">Play Now</a>
+                <div class="card trailer-card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-2ptEbmc6Lx1CvpQamlGVLvDxb0TZYRVbsKoah2ooA&s=10" loading="lazy" class="card-img-top" alt="Pulp Fiction">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Pulp Fiction</h5>
+                        <p class="card-text flex-grow-1">The lives of two mob hitmen, a boxer, and a gangster's wife intertwine in four tales of violence.</p>
+                        <a href="https://youtu.be/tGpTpVyI_OQ?si=BUU3a9Y9TnmKhHA1" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Trailer 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Trailer 5</h5>
-                        <p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas dolor laudantium eaque molestiae, illum libero veniam numquam nulla mollitia, animi ab harum quam. Magni, impedit? Nam ullam sunt itaque magnam.</p>
-                        <a href="#" class="btn btn-danger">Play Now</a>
+                <div class="card trailer-card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjdb_BiwaRCF-HuIYYeN0J_iDB_-mBx4Imll4S9XECNw&s=10" loading="lazy" class="card-img-top" alt="The Godfather">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">The Godfather</h5>
+                        <p class="card-text flex-grow-1">The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son.</p>
+                        <a href="https://youtu.be/UaVTIH8mujA?si=wFavM5IPVF4xGuzo" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 mb-3">
-                <div class="card">
-                    <img src="" class="card-img-top" alt="Trailer 2">
-                    <div class="card-body">
-                        <h5 class="card-title">Trailer 6</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ipsa inventore ab, blanditiis tempora ad hic minus magnam facilis ut esse quas illum obcaecati quo alias nulla, repudiandae doloribus reprehenderit.</p>
-                        <a href="#" class="btn btn-danger">Play Now</a>
+                <div class="card trailer-card h-100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPtJBu2-wQ4cYiG-t2gD8Ezkq3X3p0IyZjKvUTlgsWQ&s=10" loading="lazy" class="card-img-top" alt="Parasite">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Parasite</h5>
+                        <p class="card-text flex-grow-1">Greed and class discrimination threaten the newly formed symbiotic relationship between two families.</p>
+                        <a href="https://www.youtube.com/watch?v=5xH0HfJHsaY" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
