@@ -6,6 +6,7 @@
 
 **Students:** Madina Kairbayeva, Tamerlan Iskakov, Abdyssadykov Daniyar.
 
+**Link to the published website:** https://mkairbaeva664-collab.github.io/Movie_website/
 ---
 
 ## 1. Project Team & Contribution Breakdown
