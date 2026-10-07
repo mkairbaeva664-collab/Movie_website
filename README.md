@@ -1,8 +1,9 @@
 # Midterm Project Documentation & Technical Report
 
-**Course:** Web Application Development  
+**Course:** Web Application Development
+
 **Project Name:** Movie Website: info, ratings, trailers, reviews
-**Repository:** 
+
 **Students:** Madina Kairbayeva, Tamerlan Iskakov, Abdyssadykov Daniyar.
 
 ---
