@@ -1,31 +1,9 @@
-# Midterm Project Documentation & Technical Report
-
-**Course:** Web Application Development
-
 **Project Name:** Movie Website: info, ratings, trailers, reviews
-
-**Students:** Madina Kairbayeva, Tamerlan Iskakov, Abdyssadykov Daniyar.
 
 **Link to the published website:** https://mkairbaeva664-collab.github.io/Movie_website/
 ---
 
-## 1. Project Team & Contribution Breakdown
-
-The project was developed collaboratively by a team of three members. The responsibilities were distributed as follows:
-
-* **Tamerlan Iskakov**: 
-  * Developed the core **HTML structure** across all 5 pages.
-  * Created semantic markup, content layout, structured lists, data tables, and input forms.
-* **Madina Kairbayeva**: 
-  * Designed and implemented the complete **CSS UI/UX design** and visual style.
-  * Configured CSS variables, color scheme, typography, custom animations, hover effects, CSS Grid layout, and mobile responsiveness.
-* **Daniyar Abdyssadykov**: 
-  * Integrated the **Bootstrap 5 framework** for layout utilities and component responsiveness.
-  * Authored project documentation, code review, and the final **README report**.
-
----
-
-## 2. Project Overview & Features
+## 1. Project Overview & Features
 
 This web application is a multi-page, responsive movie platform designed for cinema lovers. Users can browse popular films, explore ratings, read and submit reviews, and watch embedded movie trailers.
 
@@ -38,7 +16,7 @@ This web application is a multi-page, responsive movie platform designed for cin
 
 ---
 
-## 3. Features Implemented
+## 2. Features Implemented
 
 * **Global Sticky Navigation Bar**: Persistent navigation menu with active page states and smooth transition effects across all pages (`#main-navbar`).
 * **Hero Banner & Call-to-Action**: High-impact welcome section on the homepage with dynamic background overlays and quick action buttons.
@@ -50,7 +28,7 @@ This web application is a multi-page, responsive movie platform designed for cin
 * **Responsive Design & Accessibility**: Fully adaptive layouts across mobile, tablet, and desktop viewports, complete with semantic HTML tags and image `alt` attributes.
 
 
-## 4. Technologies Used
+## 3. Technologies Used
 
 * **HTML5**:
   * Semantic layout elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<footer>`).
