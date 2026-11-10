@@ -8,126 +8,134 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="site-header">
-        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html">MOVIEHUB</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="movies.html">Catalog</a></li>
-                        <li class="nav-item"><a class="nav-link" href="ratings.html">Ratings</a></li>
-                        <li class="nav-item"><a class="nav-link" href="trailers.html">Trailers</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
     <main class="container py-5">
         <h2 class="mb-4">Browse Movies</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
+        
+        <div class="search-filter-section mb-4">
+            <input type="text" id="search-input" class="form-control mb-3" placeholder="Search for movies...">
+            
+            <div id="genre-filters" class="btn-group flex-wrap" role="group">
+                <button type="button" class="btn btn-outline-primary filter-btn active" data-genre="All">All</button>
+                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Action">Action</button>
+                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Comedy">Comedy</button>
+                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Horror">Horror</button>
+                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Drama">Drama</button>
+                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Romance">Romance</button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="movie-catalog">
+            <div class="col-md-4 movie-item" data-title="Inception" data-genre="Action">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsgXAndLrxHe5wGOIBGs961Km6D9ckI8LJ8lWGlh75pg&s=10" loading="lazy" class="card-img-top" alt="Movie 1">
                     <div class="card-body">
                         <h5 class="card-title">Inception</h5>
                         <p class="card-text">A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea.</p>
-                        <button class="btn btn-outline-red">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="Interstellar" data-genre="Drama">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNcSL6phiLPS-R4HKA7eySvulhYQNbuwy7kG5MHkoWUA&s=10" loading="lazy" class="card-img-top" alt="Movie 2">
                     <div class="card-body">
                         <h5 class="card-title">Interstellar</h5>
                         <p class="card-text">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
-                        <button class="btn btn-outline-red">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="The Dark Knight" data-genre="Action">
                 <div class="card movie-card h-100">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg" loading="lazy" class="card-img-top" alt="Movie 3">
                     <div class="card-body">
                         <h5 class="card-title">The Dark Knight</h5>
                         <p class="card-text">When the menace known as the Joker wreaks havoc, Batman must accept one of the greatest psychological tests.</p>
-                        <button class="btn btn-outline-red">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="Pulp Fiction" data-genre="Drama">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-2ptEbmc6Lx1CvpQamlGVLvDxb0TZYRVbsKoah2ooA&s=10" loading="lazy" class="card-img-top" alt="Movie 4">
                     <div class="card-body">
                         <h5 class="card-title">Pulp Fiction</h5>
                         <p class="card-text">The lives of two mob hitmen, a boxer, and a gangster's wife intertwine in four tales of violence and redemption.</p>
-                        <button class="btn btn-outline-red">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="The Godfather" data-genre="Drama">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjdb_BiwaRCF-HuIYYeN0J_iDB_-mBx4Imll4S9XECNw&s=10" loading="lazy" class="card-img-top" alt="Movie 5">
                     <div class="card-body">
                         <h5 class="card-title">The Godfather</h5>
                         <p class="card-text">The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son.</p>
-                        <button class="btn btn-outline-red">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="Parasite" data-genre="Comedy">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPtJBu2-wQ4cYiG-t2gD8Ezkq3X3p0IyZjKvUTlgsWQ&s=10" loading="lazy" class="card-img-top" alt="Movie 6">
                     <div class="card-body">
                         <h5 class="card-title">Parasite</h5>
                         <p class="card-text">Greed and class discrimination threaten the newly formed symbiotic relationship between two families.</p>
-                        <button class="btn btn-outline-red">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="1+1" data-genre="Comedy">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsh9ryAZd8eiQslVcfLvGFoFzU_zrpyX7vyF0aLGhhJA&s=10" loading="lazy" class="card-img-top" alt="Movie 7">
                     <div class="card-body">
                         <h5 class="card-title">1+1</h5>
                         <p class="card-text">After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver.</p>
-                        <button class="btn btn-outline-dark">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="The Matrix" data-genre="Action">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKDkRjUr91GxuscPB1eELu492-5W1Iym4Jc5xWgV7RkQ&s" loading="lazy" class="card-img-top" alt="Movie 8">
                     <div class="card-body">
                         <h5 class="card-title">The Matrix</h5>
                         <p class="card-text">A computer hacker discovers that his life is nothing more than an elaborate simulation run by an evil AI.</p>
-                        <button class="btn btn-outline-dark">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            
+            <div class="col-md-4 movie-item" data-title="The Platform" data-genre="Horror">
                 <div class="card movie-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQByxYsAKBebjO-t41v-mYp9TPS-j7gN8IgevVfOcx4aQ&s=10" loading="lazy" class="card-img-top" alt="Movie 9">
                     <div class="card-body">
                         <h5 class="card-title">The Platform</h5>
                         <p class="card-text">Inside a vertical prison system, inmates are assigned to a level and forced to ration.</p>
-                        <button class="btn btn-outline-dark">Details</button>
+                        <button class="btn btn-outline-danger">Details</button>
                     </div>
                 </div>
             </div>
         </div>
         
+        <div id="no-movies-msg" class="alert alert-warning mt-4" style="display: none;">
+            No movies found.
+        </div>
     </main>
 
     <footer class="bg-dark text-white pb-4 pt-4">
         <div class="container text-center"><p>&copy; 2026 MovieHub.</p></div>
     </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
