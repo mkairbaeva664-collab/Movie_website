@@ -8,6 +8,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="site-header">
+        <nav id="main-navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">MOVIEHUB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="movies.html">Catalog</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ratings.html">Ratings</a></li>
+                        <li class="nav-item"><a class="nav-link" href="trailers.html">Trailers</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
     <main class="container py-5">
         <h2 class="mb-4">Browse Movies</h2>
         
@@ -15,12 +34,12 @@
             <input type="text" id="search-input" class="form-control mb-3" placeholder="Search for movies...">
             
             <div id="genre-filters" class="btn-group flex-wrap" role="group">
-                <button type="button" class="btn btn-outline-primary filter-btn active" data-genre="All">All</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Action">Action</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Comedy">Comedy</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Horror">Horror</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Drama">Drama</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-genre="Romance">Romance</button>
+                <button type="button" class="btn btn-outline-danger filter-btn active" data-genre="All">All</button>
+                <button type="button" class="btn btn-outline-danger filter-btn" data-genre="Action">Action</button>
+                <button type="button" class="btn btn-outline-danger filter-btn" data-genre="Comedy">Comedy</button>
+                <button type="button" class="btn btn-outline-danger filter-btn" data-genre="Horror">Horror</button>
+                <button type="button" class="btn btn-outline-danger filter-btn" data-genre="Drama">Drama</button>
+                <button type="button" class="btn btn-outline-danger filter-btn" data-genre="Romance">Romance</button>
             </div>
         </div>
 
