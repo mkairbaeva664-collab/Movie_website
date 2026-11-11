@@ -1,4 +1,3 @@
-//FORM VALIDATION
 const form = document.getElementById("registrationForm");
 
 if (form) {
@@ -207,11 +206,6 @@ if (form) {
     });
 }
 
-
-//2. IMAGE GALLERY / LIGHTBOX
-
-//2. IMAGE GALLERY / LIGHTBOX
-
 if (typeof jQuery !== "undefined") {
 
     $(document).ready(function() {
@@ -271,7 +265,6 @@ if (typeof jQuery !== "undefined") {
             openLightbox(currentIndex);
         }
 
-        // Используем делегирование событий для видимых карточек
         $(document).on("click", ".movie-item:visible .card-img-top", function() {
             const images = getVisibleImages();
             const index = images.index(this);
@@ -345,4 +338,182 @@ $(document).ready(function() {
         currentGenre = $(this).data('genre');
         filterMovies();
     });
+});
+
+$(document).ready(function() {
+
+    if ($('#ratingsTableBody').length === 0) {
+        return;
+    }
+
+    let movies = [
+        { id: 1, title: "Inception", genre: "Sci-Fi", rating: 9.0 },
+        { id: 2, title: "The Godfather", genre: "Crime", rating: 9.2 },
+        { id: 3, title: "Pulp Fiction", genre: "Drama", rating: 8.9 },
+        { id: 4, title: "Interstellar", genre: "Sci-Fi", rating: 8.6 },
+        { id: 5, title: "Parasite", genre: "Thriller", rating: 8.6 }
+    ];
+
+    const savedMovies = localStorage.getItem("movieHubMovies");
+
+    if (savedMovies !== null) {
+        movies = JSON.parse(savedMovies);
+    }
+
+    let editingId = null;
+
+    const movieModal = new bootstrap.Modal(
+        document.getElementById("movieModal")
+    );
+
+    function saveMovies() {
+        localStorage.setItem("movieHubMovies", JSON.stringify(movies));
+    }
+
+    function displayMovies() {
+
+        const tableBody = $('#ratingsTableBody');
+
+        tableBody.empty();
+
+        if (movies.length === 0) {
+            $('#emptyMoviesMessage').show();
+        } else {
+            $('#emptyMoviesMessage').hide();
+        }
+
+        movies.forEach(function(movie, index) {
+
+            const row = `
+                <tr>
+                    <td>${index + 1}</td>
+                    <td>${escapeHTML(movie.title)}</td>
+                    <td>${escapeHTML(movie.genre)}</td>
+                    <td>${Number(movie.rating).toFixed(1)} / 10</td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-warning edit-btn"
+                            data-id="${movie.id}">
+                            Edit
+                        </button>
+
+                        <button class="btn btn-sm btn-outline-danger delete-btn"
+                            data-id="${movie.id}">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            `;
+
+            tableBody.append(row);
+        });
+
+        $('#movieCount').text("Total movies: " + movies.length);
+    }
+
+    function escapeHTML(value) {
+        return String(value).replace(/[&<>"']/g, function(character) {
+            return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[character];
+        });
+    }
+
+    $('#addMovieBtn').on('click', function() {
+
+        editingId = null;
+
+        $('#movieForm')[0].reset();
+        $('#movieModalTitle').text("Add Movie");
+
+        movieModal.show();
+    });
+
+    $('#movieForm').on('submit', function(event) {
+
+        event.preventDefault();
+
+        const title = $('#movieTitle').val().trim();
+        const genre = $('#movieGenre').val();
+        const rating = Number($('#movieRating').val());
+
+        if (!title || !genre || $('#movieRating').val() === '' ||
+            !Number.isFinite(rating) || rating < 0 || rating > 10) {
+            alert("Please enter valid movie information.");
+            return;
+        }
+
+        if (editingId === null) {
+
+            const newMovie = {
+                id: Date.now(),
+                title: title,
+                genre: genre,
+                rating: rating
+            };
+
+            movies.push(newMovie);
+
+        } else {
+
+            const movie = movies.find(function(item) {
+                return item.id === editingId;
+            });
+
+            if (movie) {
+                movie.title = title;
+                movie.genre = genre;
+                movie.rating = rating;
+            }
+        }
+
+        saveMovies();
+        displayMovies();
+
+        movieModal.hide();
+        $('#movieForm')[0].reset();
+
+    });
+
+    $(document).on('click', '.edit-btn', function() {
+
+        editingId = Number($(this).data('id'));
+
+        const movie = movies.find(function(item) {
+            return item.id === editingId;
+        });
+
+        if (movie) {
+            $('#movieTitle').val(movie.title);
+            $('#movieGenre').val(movie.genre);
+            $('#movieRating').val(movie.rating);
+
+            $('#movieModalTitle').text("Edit Movie");
+
+            movieModal.show();
+        }
+    });
+
+    $(document).on('click', '.delete-btn', function() {
+
+        const movieId = Number($(this).data('id'));
+
+        const confirmed = confirm("Are you sure you want to delete this movie?");
+
+        if (confirmed) {
+
+            movies = movies.filter(function(movie) {
+                return movie.id !== movieId;
+            });
+
+            saveMovies();
+            displayMovies();
+        }
+    });
+
+    displayMovies();
+
 });
