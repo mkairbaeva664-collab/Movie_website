@@ -105,9 +105,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-outline-red:hover,
-.btn-outline-red:focus {
-    background-color: var(--primary-red);
-    color: var(--text-color);
+.btn-outline-red:focus,
+.btn-outline-red.active {
+    background-color: var(--primary-red) !important;
+    border-color: var(--primary-red) !important;
+    color: var(--text-color) !important;
 }
 
 .movie-card, .review-card, .trailer-card {
@@ -232,4 +234,214 @@ footer a:hover {
     .main-head {
         font-size: 1.8rem;
     }
+}
+
+.movie-card {
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(229, 9, 20, 0.2);
+}
+
+.movie-card .card-img-top {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    object-position: center;
+    background-color: #111;
+    display: block;
+    cursor: pointer;
+}
+
+.movie-card .card-img-top:hover {
+    opacity: 0.85;
+}
+
+.movie-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-card .card-body .btn {
+    margin-top: auto;
+}
+
+.movie-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+    grid-template-columns: 55px minmax(0, 900px) 55px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 60px 20px;
+    background: rgba(0, 0, 0, 0.96);
+}
+
+.lightbox-content {
+    width: 100%;
+    max-width: 900px;
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#lightboxImage {
+    display: block;
+    max-width: 100%;
+    max-height: 75vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+
+    margin: 0 auto;
+    border: 2px solid var(--primary-red);
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(229, 9, 20, 0.25);
+}
+
+#lightboxTitle {
+    margin-top: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.lightbox-arrow {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    background: rgba(229, 9, 20, 0.15);
+    color: #fff;
+
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightbox-arrow:hover {
+    background: var(--primary-red);
+    border-color: var(--primary-red);
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+
+    border: 2px solid var(--primary-red);
+    border-radius: 50%;
+    background: transparent;
+    color: #fff;
+
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightbox-close:hover {
+    background: var(--primary-red);
+    color: #fff;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+
+    .movie-card .card-img-top {
+        height: 250px;
+    }
+
+    .movie-lightbox {
+        grid-template-columns: 40px minmax(0, 1fr) 40px;
+        gap: 8px;
+        padding: 60px 10px 20px;
+    }
+
+    .lightbox-arrow {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    #lightboxImage {
+        max-height: 65vh;
+    }
+
+    #lightboxTitle {
+        font-size: 18px;
+    }
+
+    .lightbox-close {
+        top: 12px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .movie-card .card-img-top {
+        height: 220px;
+    }
+
+    .movie-lightbox {
+        grid-template-columns: 32px minmax(0, 1fr) 32px;
+        gap: 5px;
+        padding: 55px 5px 15px;
+    }
+
+    .lightbox-arrow {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+}
+
+.password-strength {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+.strength-weak {
+    color: #dc3545; /* Красный */
+}
+.strength-medium {
+    color: #ffc107; /* Желтый / Оранжевый */
+}
+.strength-strong {
+    color: #198754; /* Зеленый */
 }
