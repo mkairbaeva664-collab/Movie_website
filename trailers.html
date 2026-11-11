@@ -30,78 +30,99 @@
 
     <main class="container pb-5 pt-5">
         <h2 class="mb-4">Latest Trailers</h2>
-        <div class="row g-4">
-            <div class="col-md-6 mb-3">
+        
+        <div class="search-filter-section mb-4">
+            <input type="text" id="search-input" class="form-control mb-3" placeholder="Search for movies...">
+            
+            <div id="genre-filters" class="btn-group flex-wrap" role="group">
+                <button type="button" class="btn btn-outline-red filter-btn active" data-genre="All">All</button>
+                <button type="button" class="btn btn-outline-red filter-btn" data-genre="Action">Action</button>
+                <button type="button" class="btn btn-outline-red filter-btn" data-genre="Comedy">Comedy</button>
+                <button type="button" class="btn btn-outline-red filter-btn" data-genre="Horror">Horror</button>
+                <button type="button" class="btn btn-outline-red filter-btn" data-genre="Drama">Drama</button>
+                <button type="button" class="btn btn-outline-red filter-btn" data-genre="Romance">Romance</button>
+            </div>
+        </div>
+
+        <div class="row g-4" id="movie-catalog">
+            <div class="col-md-6 mb-3 movie-item" data-title="Inception" data-genre="Action">
                 <div class="card trailer-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsgXAndLrxHe5wGOIBGs961Km6D9ckI8LJ8lWGlh75pg&s=10" loading="lazy" class="card-img-top" alt="Inception">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Inception</h5>
                         <p class="card-text flex-grow-1">A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea.</p>
-                        <a href="https://www.youtube.com/watch?v=YoHD9XEInc0" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
+                        <a href="https://www.youtube.com/watch?v=YoHD9XEInc0" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3 movie-item" data-title="Interstellar" data-genre="Drama">
                 <div class="card trailer-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNcSL6phiLPS-R4HKA7eySvulhYQNbuwy7kG5MHkoWUA&s=10" loading="lazy" class="card-img-top" alt="Interstellar">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Interstellar</h5>
                         <p class="card-text flex-grow-1">A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.</p>
-                        <a href="https://www.youtube.com/watch?v=zSWdZVtXT7E" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
+                        <a href="https://www.youtube.com/watch?v=zSWdZVtXT7E" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3 movie-item" data-title="The Dark Knight" data-genre="Action">
                 <div class="card trailer-card h-100">
                     <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_FMjpg_UX1000_.jpg" loading="lazy" class="card-img-top" alt="The Dark Knight">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">The Dark Knight</h5>
                         <p class="card-text flex-grow-1">When the menace known as the Joker wreaks havoc, Batman must accept one of the greatest tests.</p>
-                        <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
+                        <a href="https://www.youtube.com/watch?v=EXeTwQWrcwY" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3 movie-item" data-title="Pulp Fiction" data-genre="Drama">
                 <div class="card trailer-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk-2ptEbmc6Lx1CvpQamlGVLvDxb0TZYRVbsKoah2ooA&s=10" loading="lazy" class="card-img-top" alt="Pulp Fiction">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Pulp Fiction</h5>
                         <p class="card-text flex-grow-1">The lives of two mob hitmen, a boxer, and a gangster's wife intertwine in four tales of violence.</p>
-                        <a href="https://youtu.be/tGpTpVyI_OQ?si=BUU3a9Y9TnmKhHA1" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
+                        <a href="https://youtu.be/tGpTpVyI_OQ?si=BUU3a9Y9TnmKhHA1" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3 movie-item" data-title="The Godfather" data-genre="Drama">
                 <div class="card trailer-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjdb_BiwaRCF-HuIYYeN0J_iDB_-mBx4Imll4S9XECNw&s=10" loading="lazy" class="card-img-top" alt="The Godfather">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">The Godfather</h5>
                         <p class="card-text flex-grow-1">The aging patriarch of an organized crime dynasty transfers control of his empire to his reluctant son.</p>
-                        <a href="https://youtu.be/UaVTIH8mujA?si=wFavM5IPVF4xGuzo" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
+                        <a href="https://youtu.be/UaVTIH8mujA?si=wFavM5IPVF4xGuzo" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 mb-3">
+            <div class="col-md-6 mb-3 movie-item" data-title="Parasite" data-genre="Comedy">
                 <div class="card trailer-card h-100">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUPtJBu2-wQ4cYiG-t2gD8Ezkq3X3p0IyZjKvUTlgsWQ&s=10" loading="lazy" class="card-img-top" alt="Parasite">
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">Parasite</h5>
                         <p class="card-text flex-grow-1">Greed and class discrimination threaten the newly formed symbiotic relationship between two families.</p>
-                        <a href="https://www.youtube.com/watch?v=5xH0HfJHsaY" target="_blank" rel="noopener noreferrer" class="btn btn-red w-100 mt-2">Watch Trailer on YouTube</a>
+                        <a href="https://www.youtube.com/watch?v=5xH0HfJHsaY" target="_blank" rel="noopener noreferrer" class="btn btn-danger w-100 mt-2">Watch Trailer on YouTube</a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div id="no-movies-msg" class="alert alert-warning mt-4" style="display: none;">
+            No trailers found.
         </div>
     </main>
 
     <footer class="bg-dark text-white pb-4 pt-4">
         <div class="container text-center"><p>&copy; 2026 MovieHub.</p></div>
     </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
