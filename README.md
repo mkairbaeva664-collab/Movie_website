@@ -2,7 +2,7 @@
 
 **Project Topic:** Dynamic Movie Catalog and Review Platform
 
-**Group: ** IT-2504
+**Group:** IT-2504
 
 **Group members:** Madina Kairbayeva, Tamerlan Iskakov, Abdyssadykov Daniyar
 
