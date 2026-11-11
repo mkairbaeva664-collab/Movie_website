@@ -46,6 +46,10 @@ MovieHub is a responsive, interactive web application designed for movie enthusi
   * Synchronized the simultaneous operation of text-based search and category buttons.
   * Integrated a dynamic "No movies found" alert when query conditions yield no results.
   * Utilized `.on('input')` event listeners to update the catalog DOM immediately without reloading the page.
+* **Documentation & Publishing:**
+  * Structured and updated the existing `README.md` to reflect all endterm enhancements and individual contributions.
+  * Managed the GitHub repository integrity and project structure.
+  * Deployed the finalized project to a live hosting environment and prepared all requisite submission links.
 
 **3. Abdyssadykov Daniyar**
 * **Dynamic Table with CRUD Operations (2.3):**
@@ -54,7 +58,3 @@ MovieHub is a responsive, interactive web application designed for movie enthusi
   * **Read:** Rendered all movie records dynamically into a formatted table.
   * **Update:** Provided functionality to edit and update existing movie information.
   * **Delete:** Implemented safe item removal logic with user confirmation prompts.
-* **Documentation & Publishing:**
-  * Structured and updated the existing `README.md` to reflect all endterm enhancements and individual contributions.
-  * Managed the GitHub repository integrity and project structure.
-  * Deployed the finalized project to a live hosting environment and prepared all requisite submission links.
