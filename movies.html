@@ -152,6 +152,35 @@
         <div id="no-movies-msg" class="alert alert-warning mt-4" style="display: none;">
             No movies found.
         </div>
+
+        <hr class="my-5">
+
+        <!--API -->
+        <section id="api-movies-section" class="pt-3">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+                <div>
+                    <h2 class="mb-1">Explore Online Database (Live API)</h2>
+                    <p class="text-secondary mb-0">Search thousands of movies and TV shows powered by TVMaze API.</p>
+                </div>
+                <button type="button" id="apiResetBtn" class="btn btn-outline-red btn-sm">Load Trending</button>
+            </div>
+
+            <form id="apiSearchForm" class="input-group mb-4">
+                <input type="text" id="apiSearchInput" class="form-control" placeholder="Search online database (e.g., Batman, Sherlock, Matrix)...">
+                <button class="btn btn-red" type="submit">Search API</button>
+            </form>
+
+            <div id="apiLoading" class="text-center my-4" style="display: none;">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="text-secondary mt-2">Fetching data from API...</p>
+            </div>
+
+            <div id="apiErrorMsg" class="alert alert-danger" style="display: none;" role="alert"></div>
+
+            <div class="row g-4" id="apiMoviesContainer"></div>
+        </section>
         
     </main>
 

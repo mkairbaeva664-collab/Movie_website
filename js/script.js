@@ -641,3 +641,117 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateAuthUI();
 });
+
+//API
+document.addEventListener("DOMContentLoaded", function () {
+    const apiContainer = document.getElementById("apiMoviesContainer");
+    if (!apiContainer) return;
+
+    const apiSearchForm = document.getElementById("apiSearchForm");
+    const apiSearchInput = document.getElementById("apiSearchInput");
+    const apiResetBtn = document.getElementById("apiResetBtn");
+    const apiLoading = document.getElementById("apiLoading");
+    const apiErrorMsg = document.getElementById("apiErrorMsg");
+
+    async function fetchMoviesFromAPI(query = "Avengers") {
+        apiContainer.innerHTML = "";
+        apiErrorMsg.style.display = "none";
+        apiLoading.style.display = "block";
+
+        try {
+            const url = `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(query)}`;
+            const response = await fetch(url);
+
+            if (!response.ok) {
+                throw new Error(`Server error: ${response.status}`);
+            }
+
+            const data = await response.json();
+
+            if (!Array.isArray(data) || data.length === 0) {
+                apiErrorMsg.textContent = `No results found for "${query}". Try another title.`;
+                apiErrorMsg.style.display = "block";
+                return;
+            }
+
+            renderApiMovies(data.slice(0, 6));
+        } catch (error) {
+            apiErrorMsg.textContent = "Failed to load data from API. Please check your internet connection and try again.";
+            apiErrorMsg.style.display = "block";
+            console.error("API Fetch Error:", error);
+        } finally {
+            apiLoading.style.display = "none";
+        }
+    }
+
+    function renderApiMovies(items) {
+        apiContainer.innerHTML = "";
+
+        items.forEach(function (item) {
+            const show = item.show;
+
+            const col = document.createElement("div");
+            col.className = "col-md-4";
+
+            const card = document.createElement("div");
+            card.className = "card movie-card h-100";
+
+            const img = document.createElement("img");
+            img.className = "card-img-top";
+            img.loading = "lazy";
+            img.alt = show.name || "Poster";
+            img.src = (show.image && show.image.medium)
+                ? show.image.medium
+                : "https://via.placeholder.com/300x420?text=No+Poster";
+
+            const cardBody = document.createElement("div");
+            cardBody.className = "card-body d-flex flex-column";
+
+            const title = document.createElement("h5");
+            title.className = "card-title";
+            title.textContent = show.name || "Untitled";
+
+            const meta = document.createElement("p");
+            meta.className = "small text-danger fw-semibold mb-2";
+            const genresText = (show.genres && show.genres.length > 0) ? show.genres.join(", ") : "General";
+            const ratingText = (show.rating && show.rating.average) ? `★ ${show.rating.average}/10` : "No rating";
+            meta.textContent = `${genresText} | ${ratingText}`;
+
+            const summary = document.createElement("p");
+            summary.className = "card-text flex-grow-1";
+            const cleanSummary = show.summary
+                ? show.summary.replace(/<[^>]*>/g, "")
+                : "No description available.";
+            summary.textContent = cleanSummary.length > 130
+                ? cleanSummary.slice(0, 130) + "..."
+                : cleanSummary;
+
+            const linkBtn = document.createElement("a");
+            linkBtn.className = "btn btn-outline-danger mt-2";
+            linkBtn.href = show.url || "#";
+            linkBtn.target = "_blank";
+            linkBtn.rel = "noopener noreferrer";
+            linkBtn.textContent = "More Info";
+
+            cardBody.append(title, meta, summary, linkBtn);
+            card.append(img, cardBody);
+            col.appendChild(card);
+            apiContainer.appendChild(col);
+        });
+    }
+
+    apiSearchForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const query = apiSearchInput.value.trim();
+        if (query.length > 0) {
+            fetchMoviesFromAPI(query);
+        }
+    });
+
+    apiResetBtn.addEventListener("click", function () {
+        apiSearchInput.value = "";
+        fetchMoviesFromAPI("Avengers");
+    });
+
+    fetchMoviesFromAPI("Avengers");
+});
