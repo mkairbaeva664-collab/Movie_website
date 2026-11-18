@@ -477,3 +477,46 @@ footer a:hover {
 .strength-strong {
     color: #198754;
 }
+
+/* FAQ Section */
+.faq-item {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover,
+.faq-item.active {
+    border-color: var(--primary-red);
+}
+
+.faq-question {
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(229, 9, 20, 0.08);
+}
+
+.faq-question h5 {
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-red);
+    line-height: 1;
+    margin-left: 15px;
+    transition: transform 0.3s ease;
+}
+
+.faq-answer {
+    border-top: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
