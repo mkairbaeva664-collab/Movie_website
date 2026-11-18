@@ -477,6 +477,24 @@ if (typeof jQuery !== "undefined") {
 
         displayMovies();
     });
+
+    //FAQ Accordion
+    $(document).ready(function() {
+        $(".faq-question").on("click", function() {
+            const $item = $(this).closest(".faq-item");
+            const $answer = $item.find(".faq-answer");
+            const $icon = $(this).find(".faq-icon");
+
+            $answer.stop(true, true).slideToggle(300);
+
+            $item.toggleClass("active");
+            if ($item.hasClass("active")) {
+                $icon.text("−");
+            } else {
+                $icon.text("+");
+            }
+        });
+    });
 }
 
 //Sign in / Sign out
