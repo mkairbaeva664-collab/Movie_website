@@ -8,7 +8,7 @@
 
 **GitHub Repository:** https://github.com/mkairbaeva664-collab/Movie_website
 
-**Published Website (GitHub Pages):** https://mkairbaeva664-collab.github.io/Movie_website/
+**Published Website:** https://mkairbaeva664-collab.github.io/Movie_website/
 
 ---
 
@@ -18,12 +18,12 @@ MovieHub is a responsive, multi-page web application designed for movie enthusia
 ## Technologies Used
 * **Markup & Styling:** HTML5 (Semantic Elements), CSS3 (Custom Properties / CSS Variables, Flexbox, Grid, Media Queries)
 * **CSS Framework:** Bootstrap 5.3
-* **Scripting & DOM Manipulation:** Vanilla JavaScript (ES6+), `localStorage` API, Fetch API (`async/await`)
+* **Scripting & DOM Manipulation:** JavaScript, `localStorage` API, Fetch API (`async/await`)
 * **JavaScript Library:** jQuery 3.7.1 (`.slideToggle()`, `.fadeIn()`, `.fadeOut()`, dynamic filtering)
 * **External API:** TVMaze Public REST API (`https://api.tvmaze.com`)
 * **Deployment & Version Control:** Git, GitHub, GitHub Pages
 
-## Website Structure (6 Pages)
+## Website Structure
 1. **`index.html` (Home):** Hero banner, platform overview, and an interactive 5-question FAQ section powered by jQuery `.slideToggle()`.
 2. **`movies.html` (Catalog):** Local movie catalog with real-time search, genre filtering, custom jQuery Lightbox poster gallery, and a Live API Explorer powered by TVMaze API.
 3. **`ratings.html` (Ratings):** Interactive CRUD (Create, Read, Update, Delete) movie rating table persisted in `localStorage`.
